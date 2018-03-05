@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prueba con Redux</title>  
+  <style>
+    table, th, td {
+	  border-collapse: collapse;
+	  border: 1px solid #000;
+	}
+    td {
+	  text-align: center;
+	}
+  </style>
+</head>
+<body>
+  <table width="100%">
+  <thead>
+    <tr> 
+	  <th colspan="4">SABER</th>
+	  <th colspan="4">HACER</th>
+	  <th colspan="4">SER</th>
+	  <th rowspan="2">DEF</th>
+	</tr>
+    <tr>	  
+	  <th>S1</th>
+	  <th>S2</th>
+	  <th>S3</th>
+	  <th>DEF</th>
+	  <th>H1</th>
+	  <th>H2</th>
+	  <th>H3</th>
+	  <th>DEF</th>
+	  <th>S1</th>
+	  <th>S2</th>
+	  <th>S3</th>
+	  <th>DEF</th>
+	</tr>
+  </thead>
+  <tbody>
+    <tr id="1000">
+	  <td><input type="text" value="" data-saber="1" data-codigo="1000" maxlength="3" size="3" onchange="add(this.value, 'saber', this.dataset)" oninput="validar('saber', this.dataset)"></td>
+	  <td><input type="text" value="" data-saber="2" data-codigo="1000" maxlength="3" size="3" onchange="add(this.value, 'saber', this.dataset)" oninput="validar('saber', this.dataset)"></td>
+	  <td><input type="text" value="" data-saber="3" data-codigo="1000" maxlength="3" size="3" onchange="add(this.value, 'saber', this.dataset)" oninput="validar('saber', this.dataset)"></td>
+	  <td id="def-saber-1000">0</td>
+	  <td><input type="text" value="" data-hacer="1" data-codigo="1000" maxlength="3" size="3" onchange="add(this.value, 'hacer', this.dataset)" oninput="validar('hacer', this.dataset)"></td>
+	  <td><input type="text" value="" data-hacer="2" data-codigo="1000" maxlength="3" size="3" onchange="add(this.value, 'hacer', this.dataset)" oninput="validar('hacer', this.dataset)"></td>
+	  <td><input type="text" value="" data-hacer="3" data-codigo="1000" maxlength="3" size="3" onchange="add(this.value, 'hacer', this.dataset)" oninput="validar('hacer', this.dataset)"></td>
+	  <td id="def-hacer-1000">0</td>
+	  <td><input type="text" value="" data-ser="1" data-codigo="1000" maxlength="3" size="3" onchange="add(this.value, 'ser', this.dataset)" oninput="validar('ser', this.dataset)"></td>
+	  <td><input type="text" value="" data-ser="2" data-codigo="1000" maxlength="3" size="3" onchange="add(this.value, 'ser', this.dataset)" oninput="validar('ser', this.dataset)"></td>
+	  <td><input type="text" value="" data-ser="3" data-codigo="1000" maxlength="3" size="3" onchange="add(this.value, 'ser', this.dataset)" oninput="validar('ser', this.dataset)"></td>
+	  <td id="def-ser-1000">0</td>
+	  <td id="def-1000">0</td>
+	</tr>
+  </tbody>
+  </table>
+  <div>
+    <button id="guardar">Guardar</button>
+  </div>
+  <script src="js/redux.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
