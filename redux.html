@@ -65,7 +65,7 @@
 	function reducer(state, action) {
 	  if (typeof state === 'undefined') {
 	    return {
-		  estudiantes: JSON.parse('{"1000":{"saber":{"1":5,"2":3.5,"3":4.5},"hacer":{"1":3.5,"3":5},"ser":{"1":0}}}'),
+		  estudiantes: JSON.parse('{"90118":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90119":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90120":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90121":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90122":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90123":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90124":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90125":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90126":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90127":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90128":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90129":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90130":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90131":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90132":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90133":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90134":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90135":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90136":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90137":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90138":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90139":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90140":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90141":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90142":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90143":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90144":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90145":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90146":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90147":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90148":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90149":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90150":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90151":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90152":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90153":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90154":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90155":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90156":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90157":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90158":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90159":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}},"90160":{"saber":{"1":4.8,"2":4.5},"hacer":{},"ser":{}}}'),
 		  curso: '6-1'
 		}
 	  }
@@ -80,7 +80,7 @@
 		  copy.estudiantes = action.estudiantes;
           return copy
         case 'UPDATE_NOTA_ESTUDIANTE':
-          copy.estudiantes[action.codigo][action.comp][action.pos] = action.nota
+          copy.estudiantes[action.codigo][action.comp][action.pos] = +action.nota
 		  return copy
 		case 'DELETE_NOTA_ESTUDIANTE':
 		  delete copy.estudiantes[action.codigo][action.comp][action.pos]
