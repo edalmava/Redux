@@ -63,23 +63,26 @@
     function reducer(state, action) {
 	  if (typeof state === 'undefined') {
 	    return {
-		  estudiantes: {},
+		  estudiantes: JSON.parse('{"1000":{"saber":{"1":5,"2":3.5,"3":4.5},"hacer":{"1":3.5,"3":5},"ser":{"1":0}}}'),
 		  curso: '6-1'
 		}
 	  }
+	  
+	  var copy = Object.assign({}, state);
+	  
 	  switch (action.type) {	    
         case 'ADD_ESTUDIANTE':
-		  state.estudiantes[action.codigo] = action.notas;
-          return state
+		  copy.estudiantes[action.codigo] = action.notas;
+          return copy
 		case 'ADD_TODO_ESTUDIANTE':
-		  state.estudiantes = action.estudiantes;
-          return state
+		  copy.estudiantes = action.estudiantes;
+          return copy
         case 'UPDATE_NOTA_ESTUDIANTE':
-          state.estudiantes[action.codigo][action.comp][action.pos] = action.nota
-		  return state
+          copy.estudiantes[action.codigo][action.comp][action.pos] = action.nota
+		  return copy
 		case 'DELETE_NOTA_ESTUDIANTE':
-		  delete state.estudiantes[action.codigo][action.comp][action.pos]
-		  return state
+		  delete copy.estudiantes[action.codigo][action.comp][action.pos]
+		  return copy
 	    default:
 		  return state
 	  }
@@ -101,9 +104,9 @@
 		renderEstudiante(codigo)
 	  }*/
 	  
-	  let estudiantes = JSON.parse('{"1000":{"saber":{"1":5,"2":3.5,"3":4.5},"hacer":{"1":3.5,"3":5},"ser":{"1":0}}}')
-	  store.dispatch({ type: 'ADD_TODO_ESTUDIANTE', estudiantes: estudiantes })
-	  for (codigo in estudiantes) {
+	  /*let estudiantes = JSON.parse('{"1000":{"saber":{"1":5,"2":3.5,"3":4.5},"hacer":{"1":3.5,"3":5},"ser":{"1":0}}}')
+	  store.dispatch({ type: 'ADD_TODO_ESTUDIANTE', estudiantes: estudiantes })*/
+	  for (codigo in store.getState().estudiantes) {
 	    renderEstudiante(codigo)
 	  }
 	}
@@ -129,8 +132,7 @@
     
 	function add(nota, comp, dataset) {	  
 	  let codigo = dataset.codigo
-	  let pos = dataset[comp]
-	  //let estudiantes = store.getState().estudiantes
+	  let pos = dataset[comp]	  
 	  if (typeof store.getState().estudiantes[codigo][comp][pos] !== undefined && nota == '') {
 	    store.dispatch({ type: 'DELETE_NOTA_ESTUDIANTE', codigo: codigo, comp: comp, pos: pos })
 	  } else {	    
